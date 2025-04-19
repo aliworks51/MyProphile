@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benrahhou Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(rgba(14, 26, 43, 0.95), rgba(14, 26, 43, 0.95)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: #fff;
+      min-height: 100vh;
+    }
+    
+    /* Hero Image Section */
+    .hero-image {
+      height: 70vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                  url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: zoomEffect 15s infinite alternate;
+    }
+    
+    @keyframes zoomEffect {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 120%;
+      }
+    }
+    
+    .hero-content {
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 2rem;
+    }
+    
+    header {
+      background-color: rgba(18, 43, 69, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      backdrop-filter: blur(5px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.8rem;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      font-weight: 500;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #00d4ff;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+    }
+    .cta-button {
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 1.5rem 0;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+    }
+    .phone-number {
+      font-size: 1.5rem;
+      color: #00d4ff;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    
+    /* About Me Section with Photo */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 4rem 2rem;
+    }
+    
+    .profile-photo {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+      transition: transform 0.3s;
+      justify-self: center;
+    }
+    
+    .profile-photo:hover {
+      transform: scale(1.03);
+    }
+    
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .about-content h2 {
+      margin-bottom: 1.5rem;
+    }
+    
+    
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Ajouté pour centrer horizontalement */
+    text-align: center; /* Ajouté pour centrer le texte */
+  }
+
+    
+    /* Sections */
+    section:not(#about) {
+      padding: 3rem 2rem;
+      max-width: 9000px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      margin-top: 2rem;
+    }
+    .section-title {
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      
+    }
+    .skills ul {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .skills li {
+      background-color: #1c2e4a;
+      padding: 1rem;
+      border-radius: 8px;
+      color: #fff;
+      flex: 1 1 30%;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .skills li:hover {
+      transform: translateY(-5px);
+      background-color: #00d4ff;
+      color: #000;
+    }
+    .button {
+      background-color: #00d4ff;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: button;
+      text-align: center;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+    .button:hover {
+      background-color: #00a3cc;
+    }
+    .project-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background-color: #1c2e4a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      height: 180px;
+      object-fit: cover;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(18, 43, 69, 0.9);
+      margin-top: 3rem;
+    }
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+    .fade-in.active {
+      opacity: 1;
+    }
+    .slide-up {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .slide-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      #about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .profile-photo {
+        margin-bottom: 2rem;
+        max-width: 250px;
+      }
+      
+      .hero-image {
+        height: 50vh;
+        animation: none;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      .skills li {
+        flex: 1 1 100%;
+      }
+      nav {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BENRAHHOU</div> 
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact Me</a>
+    </nav>
+  </header>
+
+  <!-- Hero Image Section -->
+  <div class="hero-image">
+    <div class="hero-content">
+      <h1 class="fade-in">Professional AI Developer</h1>
+      <h2 class="slide-up">Transforming Ideas Into Intelligent Solutions</h2>
+      <a href="#contact" class="cta-button slide-up">HIRE ME</a>
+    </div>
+  </div>
+<hr><br>
+  <main>
+    <!-- About Me Section with Photo -->
+    <section id="about" class="fade-in">
+      <img src="my.png" alt="Ali Benrahhou" class="profile-photo slide-up">
+      <div class="about-content">
+        <h2 class="section-title" >About Me</h2>
+        <p>Second-year student specializing in artificial intelligence — motivated, curious, and passionate about smart technologies and data science. With foundational skills in programming and machine learning, I'm continuously expanding my expertise through hands-on projects in AI development.</p>
+        <p>My approach combines technical knowledge with creative problem-solving to develop innovative solutions. I thrive in collaborative environments where I can contribute to cutting-edge technologies while learning from experienced professionals.</p>
+        <p>When I'm not coding, you can find me exploring the latest advancements in AI, participating in tech communities, or working on personal projects that challenge my skills.</p>
+        <a href="https://github.com/aliworks51/ali" class="button" target="_blank">View My GitHub</a>
+      </div>
+    </section>
+
+    <section id="skills" class="skills fade-in">
+      <h2 class="section-title" style="font-weight: bold;"> Skills</h2>
+      <ul>
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Machine Learning</li>
+        <li>Data Analysis</li>
+        <li>AI Algorithms</li>
+        <li>Git & GitHub</li>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2 class="section-title" style="font-weight: bold;"> Projects</h2>
+      <div class="project-container">
+        <div class="project-card">
+          <h3>E-commerce Platform</h3>
+          <img src="PR1.png" alt="E-commerce Project Screenshot"><hr>
+          <h4 style="font-weight: bold ;color: aquamarine;">Minimalist Online Store:</h4>
+          <p>Developed a responsive e-commerce platform with intuitive UI, shopping cart functionality, and search features using <p style="font-weight: bold ;color: rgb(137, 225, 6);">HTML, CSS, <p>and <p style="font-weight: bold ;color: rgb(137, 225, 6)";>JavaScript.</p>
+          <a href="https://aliworks51.github.io/my_project/" class="button" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>AI Data Analysis Tool</h3>
+          <img src="pr12.png" alt="Data Analysis Project"> <hr>
+          <p style="color: aquamarine;">
+            Technical Skills Showcase </p><p>
+This page demonstrates my core competencies in web development and programming. You'll find:</p>
+
+<p style="font-weight: bold ;color: blueviolet;">Programming Languages:</p> <p>Python, JavaScript, PHP</p>
+
+<p style="font-weight: bold ;color: blueviolet;">Web Technologies:</p><p> HTML5, CSS3, Django, React</p>
+
+<p style="font-weight: bold ;color: blueviolet;">Database Management:</p><p> MySQL, MongoDB</p>
+
+
+
+Each skill is presented with a visual proficiency indicator <br>( <p style="font-weight: bold ;color: rgb(137, 225, 6);">Beginner/Intermediate/Advanced<p>) based on hands-on project experience. The page highlights both my strongest capabilities and skills I'm currently improving.</p>
+          <a href="https://aliworks51.github.io/AI-LANGUAGES-HUB//" class="button" target="_blank">Source Code</a>
+        </div>
+        <div class="project-card">
+          <h3>Mastering MySQL Basics: From Terminal to Web Apps</h3>
+          <img src="pr3.png" alt="Portfolio Project">
+          <hr><p style="font-weight: bold ;color: aquamarine";>MySQL Database Skills <br>
+            <p>
+✔ Design & create relational databases <br>
+✔ Perform all CRUD operations <br>
+✔ Manage users & permissions <br>
+✔ Use MySQL Workbench for database design <br>
+<p style="font-weight: bold ;color: blueviolet";>Working On: </p><p>
+→ Complex joins & query optimization <br>
+→ Stored procedures <br>
+→ Database security</p>
+          <a href="c:\Users\alibe\OneDrive\Documents\ali\ALI\Java\pr tree\index.html" class="button" target="_blank">Source Code</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2 class="section-title" style="font-weight: bold;"> Contact Me</h2>
+      <p>Feel free to reach out for collaborations or questions about my work.</p>
+      <p><strong>📞 Phone:</strong> +212 651044123</p>
+      <p><strong>📧 Email:</strong > <a href="ali.benrahhou.51@gmail.com" alt="Email" target="_blank"></a>ali.benrahhou.51@gmail.com</p>
+      <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/ali-benrahhou-2b8316313/" target="_blank">linkedin.com/in/ali-benrahhou</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ali Benrahhou | <a href="https://github.com/aliworks51/ali" target="_blank">GitHub</a></p>
+  </footer>
+
+  <script>
+    // Scroll animation
+    const fadeElements = document.querySelectorAll('.fade-in, .slide-up');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    fadeElements.forEach(element => {
+      observer.observe(element);
+    });
+    
+    // Smooth scrolling for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Button hover effect enhancement
+    const buttons = document.querySelectorAll('.button, .cta-button');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        button.style.transform = 'translateY(-3px)';
+      });
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0)';
+      });
+    });
+    
+    // Dynamic hero image rotation
+    const heroImages = [
+      'https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+    ];
+    
+    const heroImage = document.querySelector('.hero-image');
+    let currentImageIndex = 0;
+    
+    function changeHeroImage() {
+      currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+      heroImage.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${heroImages[currentImageIndex]})`;
+      heroImage.style.transition = 'background-image 1.5s ease-in-out';
+    }
+    
+    // Change image every 5 seconds
+    setInterval(changeHeroImage, 5000); 
+  </script>
+</body>
+</html>
