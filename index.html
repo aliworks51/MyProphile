@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benrahhou Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Compétences MySQL | Portfolio Benrahhou</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,7 +13,7 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(rgba(14, 26, 43, 0.95), rgba(14, 26, 43, 0.95)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      background: linear-gradient(rgba(14, 26, 43, 0.95), rgba(14, 26, 43, 0.95)), url(backg.jpg) no-repeat center center/cover;
       color: #fff;
       min-height: 100vh;
     }
@@ -22,7 +22,7 @@
     .hero-image {
       height: 70vh;
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                  url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+                  url(backg.jpg) no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -143,6 +143,25 @@
       align-items: center;
       padding: 4rem 2rem;
     }
+    
+    .profile-photo {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+      transition: transform 0.3s;
+      
+      justify-self: center;
+    }
+    
+   
+    
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
     .about-content h2 {
       margin-bottom: 1.5rem;
     }
@@ -268,16 +287,8 @@
         text-align: center;
       }
       
-      .profile-photo {
-        width: 100%;
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-      transition: transform 0.3s;
-      justify-self: center;
-      }
       
-      .hero-image {
+       .hero-image {
         height: 50vh;
         animation: none;
       }
@@ -286,7 +297,7 @@
       }
       .hero h2 {
         font-size: 2.5rem;
-      }
+      } 
       .skills li {
         flex: 1 1 100%;
       }
@@ -468,5 +479,136 @@ Each skill is presented with a visual proficiency indicator <br>( <p style="font
     // Change image every 5 seconds
     setInterval(changeHeroImage, 5000); 
   </script>
+</body>
+</html>
+      padding: 30px;
+      background: var(--dark);
+      color: white;
+      margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Mes Compétences MySQL</h1>
+      <p class="subtitle">Gestion de bases de données relationnelles avec MySQL</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="card">
+      <h2>À Propos de Mon Expérience MySQL</h2>
+      <p>En tant que développeur débutant, j'ai acquis des compétences solides dans la gestion de bases de données MySQL. Je maîtrise les opérations fondamentales et peux créer des structures de données efficaces pour des applications web simples.</p>
+      
+      <div class="grid">
+        <div>
+          <h3>Ce que je maîtrise :</h3>
+          <div class="skill">
+            <div class="skill-icon">✓</div>
+            <span>Création de bases et tables</span>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">✓</div>
+            <span>Opérations CRUD de base</span>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">✓</div>
+            <span>Gestion des utilisateurs</span>
+          </div>
+        </div>
+        
+        <div>
+          <h3>Ce que j'apprends :</h3>
+          <div class="skill">
+            <div class="skill-icon">↻</div>
+            <span>Requêtes complexes (JOIN, subqueries)</span>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">↻</div>
+            <span>Optimisation des performances</span>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">↻</div>
+            <span>Procédures stockées</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Exemples Concrets</h2>
+      
+      <h3>Création d'une Table Utilisateurs</h3>
+      <div class="code-block">
+<span class="keyword">CREATE TABLE</span> utilisateurs (
+  id <span class="keyword">INT AUTO_INCREMENT PRIMARY KEY</span>,
+  nom <span class="keyword">VARCHAR</span>(50) <span class="keyword">NOT NULL</span>,
+  email <span class="keyword">VARCHAR</span>(100) <span class="keyword">UNIQUE NOT NULL</span>,
+  date_inscription <span class="keyword">TIMESTAMP DEFAULT</span> CURRENT_TIMESTAMP,
+  actif <span class="keyword">BOOLEAN DEFAULT</span> 1
+);
+      </div>
+      
+      <h3>Requêtes de Base</h3>
+      <table class="table">
+        <tr>
+          <th>Opération</th>
+          <th>Exemple</th>
+        </tr>
+        <tr>
+          <td>INSERT</td>
+          <td><span class="keyword">INSERT INTO</span> utilisateurs (nom, email) <span class="keyword">VALUES</span> ('Ali', 'ali@example.com');</td>
+        </tr>
+        <tr>
+          <td>SELECT</td>
+          <td><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> utilisateurs <span class="keyword">WHERE</span> actif = 1;</td>
+        </tr>
+        <tr>
+          <td>UPDATE</td>
+          <td><span class="keyword">UPDATE</span> utilisateurs <span class="keyword">SET</span> nom = 'Ali B' <span class="keyword">WHERE</span> id = 1;</td>
+        </tr>
+        <tr>
+          <td>DELETE</td>
+          <td><span class="keyword">DELETE FROM</span> utilisateurs <span class="keyword">WHERE</span> actif = 0;</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="visual">
+      <h2>Schéma de Base de Données</h2>
+      <p>Exemple de structure pour une application de blog :</p>
+      <img src="https://i.imgur.com/XYQ2zTl.png" alt="Schéma de base de données MySQL">
+      <p><small>Relations entre tables utilisateurs, articles et commentaires</small></p>
+    </section>
+
+    <section class="card">
+      <h2>Gestion des Utilisateurs</h2>
+      <p>Je sais configurer les accès de base pour sécuriser une base de données :</p>
+      
+      <div class="code-block">
+<span class="comment">-- Création d'un utilisateur avec accès limité</span>
+<span class="keyword">CREATE USER</span> 'app_user'@'localhost' <span class="keyword">IDENTIFIED BY</span> <span class="string">'MotDePasseSecure123!'</span>;
+
+<span class="comment">-- Attribution des privilèges</span>
+<span class="keyword">GRANT SELECT, INSERT, UPDATE</span> <span class="keyword">ON</span> ma_base.* <span class="keyword">TO</span> 'app_user'@'localhost';
+
+<span class="comment">-- Actualisation des permissions</span>
+<span class="keyword">FLUSH PRIVILEGES</span>;
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Ali Benrahhou | Tous droits réservés</p>
+    </div>
+  </footer>
 </body>
 </html>
